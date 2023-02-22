@@ -32,6 +32,7 @@ getData(api_url);
 
 
 function postElement(post){
+  
   const linkElement = document.createElement('a'); //making a link 
   linkElement.setAttribute('href',`${api_url}/posts/${post.id}`);
   linkElement.setAttribute('target','_blank');
