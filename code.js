@@ -1,6 +1,7 @@
 
 const api_url = "https://jsonplaceholder.typicode.com";
 todoItems = [];
+
 async function getData(url) {
 
   const response = await fetch(`${url}/posts`);
@@ -12,9 +13,15 @@ async function getData(url) {
 
   data.forEach(element => {
     
-    todoItems = data.map(element => element.body);
-    //postElement(element.body);
-    console.log(element.body);
+    const linkElement = document.createElement('a'); //making a link 
+    linkElement.setAttribute('href',`${url}/posts/${element.id}`);
+    linkElement.setAttribute('target','_blank');
+    //linkElement.innerText = element.title;
+    
+   
+    todoItems = data.map(element => element.title)
+    
+    console.log(element.title);
     
   });
     updateDom();
@@ -30,10 +37,11 @@ function postElement(post){
   linkElement.setAttribute('target','_blank');
   linkElement.innerText = post.title;
 
-  const postTitleElement = document.createElement('h3');
-  postTitleElement.appendChild(linkElement);
+  //const postTitleElement = document.createElement('h3');
+  //postTitleElement.appendChild(linkElement);
 
-  return postTitleElement;
+  //return postTitleElement;
+  //console.log(todoItems);
     //updateDom();
 }
 
@@ -46,9 +54,10 @@ function updateDom() {
   for (let i = 0; i < todoItems.length; i++) {
     
 
-    dat = dat + `<div class="leftcolumn">${todoItems[i]}
+    dat = dat + `<div class="leftcolumn">
+    <a href=‘…’>${todoItems[i]} </a>
     </div>`;
-    dat.appendChild(postElement(todoItems[i]));
+    
 
  }
 console.log(dat);
