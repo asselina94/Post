@@ -1,6 +1,6 @@
 
 const api_url = "https://jsonplaceholder.typicode.com";
-todoItems = [];
+posts = [];
 
 async function getData(url) {
 
@@ -19,7 +19,7 @@ async function getData(url) {
     //linkElement.innerText = element.title;
     
    
-    todoItems = data.map(element => element.title)
+    posts = data.map(element => element.title)
     
     console.log(element.title);
     
@@ -30,33 +30,15 @@ async function getData(url) {
 getData(api_url);
 
 
-
-function postElement(post){
-  
-  const linkElement = document.createElement('a'); //making a link 
-  linkElement.setAttribute('href',`${api_url}/posts/${post.id}`);
-  linkElement.setAttribute('target','_blank');
-  linkElement.innerText = post.title;
-
-  //const postTitleElement = document.createElement('h3');
-  //postTitleElement.appendChild(linkElement);
-
-  //return postTitleElement;
-  //console.log(todoItems);
-    //updateDom();
-}
-
-
-
 function updateDom() {
 
   let dat = "";
 
-  for (let i = 0; i < todoItems.length; i++) {
+  for (let i = 0; i < posts.length; i++) {
     
 
     dat = dat + `<div class="leftcolumn">
-    <a href=‘…’>${todoItems[i]} </a>
+    <a href="post.html?postId=id">${posts[i]} </a>
     </div>`;
     
 
