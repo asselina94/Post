@@ -1,7 +1,7 @@
 
 const api_url = "https://jsonplaceholder.typicode.com";
 posts = [];
-
+arr = [];
 async function getData(url) {
 
   const response = await fetch(`${url}/posts`);
@@ -20,6 +20,7 @@ async function getData(url) {
     
    
     posts = data.map(element => element.title)
+    arr = data.map(element => element.id)
     
     console.log(element.title);
     
@@ -38,7 +39,7 @@ function updateDom() {
     
 
     dat = dat + `<div class="leftcolumn">
-    <a href="post.html?postId=id">${posts[i]} </a>
+    <a href="post.html?postId=${arr[i]}">${posts[i]} </a>
     </div>`;
     
 
