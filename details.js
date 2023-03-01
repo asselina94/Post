@@ -6,9 +6,26 @@ const queryString = window.location.search;
   const product = urlParams.get('postId')
   console.log(product);
 
-  let post = "";
+const url = "https://jsonplaceholder.typicode.com";
 
-  post = post +  `<div class="main">${product}
-  </div>`;
-  console.log(post);
- document.getElementById("main").innerHTML = post;
+
+async function getData(url) {
+
+  const response = await fetch(`${url}/posts/${product}`);
+
+  let data = await response.json();
+  console.log(data);
+ 
+  let dat = "";
+
+  
+    dat = dat + `<div class="main">${JSON.stringify(data)}</div>`;
+    
+
+ 
+console.log(dat);
+document.getElementById("main").innerHTML = dat;
+
+}
+getData(url);
+  
