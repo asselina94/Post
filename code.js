@@ -19,10 +19,10 @@ async function getData(url) {
     //linkElement.innerText = element.title;
     
    
-    posts = data.map(element => element.title)
+    posts = data.map(element => element.body)
     arr = data.map(element => element.id)
     
-    console.log(element.title);
+    console.log(element.body);
     
   });
     updateDom();
@@ -35,15 +35,15 @@ function updateDom() {
 
   let dat = "";
 
-  for (let i = 0; i < posts.length; i++) {
+  for (let i = 0; i < 3; i++) {
     
 
-    dat = dat + `<div class="leftcolumn">
+    dat = dat + `<p class="column">
     <a href="post.html?postId=${arr[i]}">${posts[i]} </a>
-    </div>`;
+    </p>`;
     
 
  }
 console.log(dat);
- document.getElementById("leftcolumn").innerHTML = dat;
+ document.getElementById("column").innerHTML = dat;
 }
