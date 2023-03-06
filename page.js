@@ -23,9 +23,9 @@ async function getData(url) {
     card.classList = 'card-body';
 
     const content = `
-    <div class="card"> 
-    </div>
+    
     <div class ="card-body">
+    <img src="images/jo.jpg" width="445" height="226" alt="" />
       <h2>Travel</h2>
       <h3>User: ${data.id}</h3>
       <h3>UserId: ${data.userId}</h3>
@@ -33,20 +33,12 @@ async function getData(url) {
       <p>${data.body}</p>
       
     </div>
-  </div>
-   
+    
 `;
 cont.innerHTML += content;
 
-
-  //let dat = "";
-
-  
-    //dat = dat + `<div class="main">${JSON.stringify(data)}</div>`;
-    
-
- 
-
+//let dat = ""; 
+//dat = dat + `<div class="main">${JSON.stringify(data)}</div>`;   
 //document.getElementById("main").innerHTML = dat;
 
 }

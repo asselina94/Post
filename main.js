@@ -3,6 +3,9 @@ const api_url = "https://jsonplaceholder.typicode.com";
 posts = [];
 titles = [];
 postId = [];
+span = ["Travel","Place","City"];
+images = ["images/mount.jpg","images/jo.jpg","images/ny.jpg"];
+
 async function getData(url) {
 
   const response = await fetch(`${url}/posts`);
@@ -45,10 +48,10 @@ function updateDom() {
     const content = `
     <div class="card">
     <div class="card-header">
-      <img src="images/mount.jpg" alt="" />
+      <img src="${images[i]}" alt="" />
     </div>
     <div class ="card-body">
-      <span class="tag tag-teal">Travel</span>
+      <span class="tag tag-teal">${span[i]}</span>
       <h4><a href="post.html?postId=${postId[i]}">${titles[i]} </a></h4>
       <p>${posts[i]}</p>
       
