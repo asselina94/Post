@@ -38,9 +38,12 @@ function updateDom() {
   for (let i = 0; i < 3; i++) {
     
 
-    dat = dat + `<p class="column">
-    <a href="post.html?postId=${arr[i]}">${posts[i]} </a>
-    </p>`;
+    dat = dat + `
+    
+        <p class = "column">
+        <a href="post.html?postId=${arr[i]}">${posts[i]} </a>
+        </p> 
+    `;
     
 
  }
