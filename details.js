@@ -16,15 +16,38 @@ async function getData(url) {
   let data = await response.json();
   console.log(data);
  
-  let dat = "";
+
+  const cont = document.getElementById('main');
+  
+  const card = document.createElement('div');
+    card.classList = 'card-body';
+
+    const content = `
+    <div class="card"> 
+    </div>
+    <div class ="card-body">
+      <h2>Travel</h2>
+      <h3>User: ${data.id}</h3>
+      <h3>UserId: ${data.userId}</h3>
+      <h3>${data.title}</h3>
+      <p>${data.body}</p>
+      
+    </div>
+  </div>
+   
+`;
+cont.innerHTML += content;
+
+
+  //let dat = "";
 
   
-    dat = dat + `<div class="main">${JSON.stringify(data)}</div>`;
+    //dat = dat + `<div class="main">${JSON.stringify(data)}</div>`;
     
 
  
-console.log(dat);
-document.getElementById("main").innerHTML = dat;
+
+//document.getElementById("main").innerHTML = dat;
 
 }
 getData(url);
